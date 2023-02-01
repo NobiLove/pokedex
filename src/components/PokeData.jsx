@@ -1,4 +1,5 @@
 import React from 'react'
+import PokeImage from './PokeImage'
 import Stat from './Stat'
 
 const PokeData = ({ selectedPokemon }) => {
@@ -8,16 +9,14 @@ const PokeData = ({ selectedPokemon }) => {
 
   return (
     <div className='flex flex-wrap'>
-      <div>
-        <img className='h-36 w-36 m-6' src={sprites?.other?.dream_world.front_default} alt='Selected Pokemon' />
-      </div>
+      <PokeImage sprites={sprites} />
       <div>
         <p className='my-2'>Nº {id}</p>
-        <p className='my-2'>Nombre: {name}</p>
-        <p className='my-2 p-2 border-2 '>Estadisticas {stats?.map((obj) => {
+        <p className='my-2'>Name: {name}</p>
+        <div className='my-2 p-2 border-2 rounded-md border-neutral-500'>Stats {stats?.map((obj) => {
           return <Stat key={obj.stat.url} stat={obj} />
         })}
-        </p>
+        </div>
       </div>
     </div>
   )
