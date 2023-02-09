@@ -1,7 +1,8 @@
 import axios from 'axios'
 
 const UsePokeApi = async (pokemonName) => {
-  const { data } = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
+  const formatedName = pokemonName.toLowerCase()
+  const { data } = await axios.get(`https://pokeapi.co/api/v2/pokemon/${formatedName}`)
   return data
 }
 
