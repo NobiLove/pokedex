@@ -1,16 +1,26 @@
 import React from 'react'
 import PokeImage from './PokeImage'
 import Stat from './Stat'
+import Image from './Image'
 import { formatText } from '../utils/util'
+import ghost from '../images/ghost.gif'
+import { PokeList } from './PokeList'
 
-const PokeData = ({ selectedPokemon }) => {
-  if (!selectedPokemon.id) return (<> !!! </>)
-
+const PokeData = ({ selectedPokemon, setSelectedPokemon }) => {
   const { id, name, sprites, stats } = selectedPokemon
   const formatedName = formatText(name)
 
+  if (!selectedPokemon.id) {
+    return (
+      <div className='flex flex-wrap'>
+        <Image src={ghost} alt='no pokemon selected' />
+        <PokeList setSelectedPokemon={setSelectedPokemon} />
+      </div>
+    )
+  }
+
   return (
-    <div className='flex flex-wrap'>
+    <div className='flex flex-wrap place-content-between'>
       <PokeImage sprites={sprites} />
       <div>
         <p className='my-2 font-thin text-5xl'>Nº {id}</p>
@@ -22,6 +32,7 @@ const PokeData = ({ selectedPokemon }) => {
           )}
         </div>
       </div>
+      <PokeList setSelectedPokemon={setSelectedPokemon} />
     </div>
   )
 }

@@ -13,7 +13,7 @@ export default function App () {
         <PokeLogo />
       </nav>
       <main className='bg-slate-900'>
-        <PokeData selectedPokemon={selectedPokemon} />
+        <PokeData selectedPokemon={selectedPokemon} setSelectedPokemon={setSelectedPokemon} />
       </main>
     </div>
   )
