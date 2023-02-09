@@ -1,5 +1,5 @@
-// export const formatText = str => str.charAt(0).toUpperCase() + str.slice(1)
-export const formatText = str => str
+export const formatText = str => str?.charAt(0).toUpperCase() + str?.slice(1)
+// export const formatText = str => str
 
 export const pokemonList = [{
   id: 1,

@@ -14,12 +14,12 @@ export const PokeList = ({ setSelectedPokemon }) => {
       <ul>
         {pokemonList.map(pokemon => {
           return (
-            <li key={pokemon.id}>
+            <li key={pokemon.id} className='text-xl font-thin'>
               <button
                 onClick={handleClick}
                 id={pokemon.name.english}
-                className='border-red-700'
-              >Nº{pokemon.id} {pokemon.name.english}
+                className=''
+              >Nº {pokemon.id} {pokemon.name.english}
               </button>
             </li>
           )

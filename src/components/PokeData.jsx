@@ -9,10 +9,9 @@ import { PokeList } from './PokeList'
 const PokeData = ({ selectedPokemon, setSelectedPokemon }) => {
   const { id, name, sprites, stats } = selectedPokemon
   const formatedName = formatText(name)
-
   if (!selectedPokemon.id) {
     return (
-      <div className='flex flex-wrap'>
+      <div className='flex flex-wrap place-content-between'>
         <Image src={ghost} alt='no pokemon selected' />
         <PokeList setSelectedPokemon={setSelectedPokemon} />
       </div>
@@ -21,11 +20,13 @@ const PokeData = ({ selectedPokemon, setSelectedPokemon }) => {
 
   return (
     <div className='flex flex-wrap place-content-between'>
-      <PokeImage sprites={sprites} />
-      <div>
+      <div className=''>
+        <PokeImage sprites={sprites} />
+      </div>
+      <div className=''>
         <p className='my-2 font-thin text-5xl'>Nº {id}</p>
         <p className='my-2 font-thin text-3xl'>Name: {formatedName}</p>
-        <div className='my-2 p-2 border-2 rounded-md border-neutral-500'>
+        <div className='my-2 p-2 border-2 rounded-md border-neutral-500 bg-slate-600'>
           <p className='my-2 font-thin text-3xl'>Stats</p>
           {stats?.map((stat) =>
             <Stat key={stat.stat.url} stat={stat} />
