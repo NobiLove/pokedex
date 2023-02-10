@@ -33,8 +33,8 @@ const PokeData = ({ selectedPokemon, setSelectedPokemon }) => {
             <Stat key={stat.stat.url} stat={stat} />
           )}
         </div>
+        <PokeList setSelectedPokemon={setSelectedPokemon} />
       </div>
-      <PokeList setSelectedPokemon={setSelectedPokemon} />
     </div>
   )
 }
