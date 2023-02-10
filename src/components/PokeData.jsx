@@ -20,18 +20,20 @@ const PokeData = ({ selectedPokemon, setSelectedPokemon }) => {
   }
 
   return (
-    <div className='flex flex-wrap place-content-between'>
+    <div className='flex flex-wrap place-content-evenly'>
       <div className=''>
         <PokeImage sprites={sprites} />
       </div>
-      <div className=''>
-        <p className='my-2 font-thin text-5xl'>Nº {id}</p>
-        <p className='my-2 font-thin text-3xl'>{formatedName}</p>
-        <div className='my-2 p-2 border-2 rounded-md border-neutral-500 bg-slate-600'>
-          <p className='my-2 font-thin text-3xl'>Stats</p>
-          {stats?.map((stat) =>
-            <Stat key={stat.stat.url} stat={stat} />
-          )}
+      <div className='flex inline-block'>
+        <div>
+          <p className='my-2 font-thin text-5xl'>Nº {id}</p>
+          <p className='my-2 font-thin text-3xl'>{formatedName}</p>
+          <div className='my-2 p-2 border-2 rounded-md border-neutral-500 bg-slate-600 mx-2'>
+            <p className='my-2 font-thin text-3xl'>Stats</p>
+            {stats?.map((stat) =>
+              <Stat key={stat.stat.url} stat={stat} />
+            )}
+          </div>
         </div>
         <PokeList setSelectedPokemon={setSelectedPokemon} />
       </div>
