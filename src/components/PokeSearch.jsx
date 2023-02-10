@@ -13,11 +13,11 @@ const PokeSearch = ({ setSelectedPokemon }) => {
   return (
     <form>
       <input
-        className='bg-black rounded-xl py-2 px-2 mx-2 my-1 hover:border-red-600 border-2 font-thin text-3xl'
+        className='bg-black rounded-xl py-2 px-2 mx-2 my-1 hover:border-red-600 border-2 font-thin text-2xl'
         value={search}
         onChange={({ target }) => setSearch(target.value)}
       />
-      <button onClick={submit} className='bg-black rounded-xl py-2 px-2 mx-2 my-1 hover:border-red-600 border-2 font-thin text-3xl'>Search</button>
+      <button onClick={submit} className='bg-black rounded-xl py-2 px-2 mx-2 my-1 hover:border-red-600 border-2 font-thin text-2xl'>Search</button>
     </form>
   )
 }

@@ -10,7 +10,6 @@ export default function App () {
     <div className='bg-zinc-900 text-white h-screen w-screen'>
       <nav className='bg-slate-700 py-3 px-3 flex place-content-between items-center'>
         <PokeSearch setSelectedPokemon={setSelectedPokemon} />
-        <PokeLogo />
       </nav>
       <main className='bg-slate-900'>
         <PokeData selectedPokemon={selectedPokemon} setSelectedPokemon={setSelectedPokemon} />

@@ -9,6 +9,7 @@ import { PokeList } from './PokeList'
 const PokeData = ({ selectedPokemon, setSelectedPokemon }) => {
   const { id, name, sprites, stats } = selectedPokemon
   const formatedName = formatText(name)
+
   if (!selectedPokemon.id) {
     return (
       <div className='flex flex-wrap place-content-between'>
@@ -25,7 +26,7 @@ const PokeData = ({ selectedPokemon, setSelectedPokemon }) => {
       </div>
       <div className=''>
         <p className='my-2 font-thin text-5xl'>Nº {id}</p>
-        <p className='my-2 font-thin text-3xl'>Name: {formatedName}</p>
+        <p className='my-2 font-thin text-3xl'>{formatedName}</p>
         <div className='my-2 p-2 border-2 rounded-md border-neutral-500 bg-slate-600'>
           <p className='my-2 font-thin text-3xl'>Stats</p>
           {stats?.map((stat) =>
