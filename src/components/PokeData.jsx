@@ -12,7 +12,7 @@ const PokeData = ({ selectedPokemon, setSelectedPokemon }) => {
 
   if (!selectedPokemon.id) {
     return (
-      <div className='flex flex-wrap place-content-between'>
+      <div className='flex flex-wrap place-content-evenly'>
         <Image src={ghost} alt='no pokemon selected' />
         <PokeList setSelectedPokemon={setSelectedPokemon} />
       </div>
